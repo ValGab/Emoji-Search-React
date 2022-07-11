@@ -20,6 +20,8 @@ function App() {
             {data.map((element, index) => {
               if (element.keywords.includes(search)) {
                 return <Line value={element} key={index} />;
+              } else {
+                return null;
               }
             })}
           </div>
@@ -28,6 +30,8 @@ function App() {
             {data20.map((element, index) => {
               if (element.keywords.includes(search)) {
                 return <Line value={element} key={index} />;
+              } else {
+                return null;
               }
             })}
           </div>

@@ -5,14 +5,17 @@ const Search = ({ value, setValue }) => {
   };
 
   return (
-    <form>
-      <input
-        type="text"
-        placeholder="What emoji are you looking for ?"
-        value={value}
-        onChange={handleChange}
-      />
-    </form>
+    <header>
+      <h1>😎 EmojiSearch 😎</h1>
+      <form>
+        <input
+          type="text"
+          placeholder="What emoji are you looking for ?"
+          value={value}
+          onChange={handleChange}
+        />
+      </form>
+    </header>
   );
 };
 

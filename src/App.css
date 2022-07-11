@@ -8,9 +8,22 @@ h1 {
   margin: 20px 0;
 }
 
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: orange;
+}
+
 .App {
   max-width: 1000px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,7 +72,7 @@ form input:focus {
 }
 
 .result-line:hover {
-  background-color: rgb(164, 160, 160);
+  background-color: rgb(205, 204, 204);
 }
 
 .result-line:hover::after {
@@ -86,4 +99,23 @@ footer {
 
 footer p {
   font-size: 20px;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  form input {
+    font-size: 16px;
+  }
+
+  footer p {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .result-line:hover::after {
+    display: none;
+  }
 }

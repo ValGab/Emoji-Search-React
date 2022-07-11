@@ -13,22 +13,21 @@ function App() {
 
   return (
     <div className="App">
-      <h1>😎 EmojiSearch 😎</h1>
       <Search value={search} setValue={setSearch} />
       <div className="results">
         {search ? (
           <div className="line">
-            {data.map((element) => {
+            {data.map((element, index) => {
               if (element.keywords.includes(search)) {
-                return <Line value={element} />;
+                return <Line value={element} key={index} />;
               }
             })}
           </div>
         ) : (
           <div className="line">
-            {data20.map((element) => {
+            {data20.map((element, index) => {
               if (element.keywords.includes(search)) {
-                return <Line value={element} />;
+                return <Line value={element} key={index} />;
               }
             })}
           </div>

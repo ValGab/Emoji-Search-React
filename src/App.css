@@ -1,38 +1,89 @@
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+h1 {
+  font-size: 50px;
+  margin: 20px 0;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+form {
+  width: 60%;
+  margin: 10px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form input {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 20px;
+  color: black;
+  border-radius: 10px;
+  background-color: rgb(255, 221, 136);
+}
+
+form input:focus {
+  border: none;
+}
+
+.results {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.line {
+  width: 90%;
+  position: relative;
+}
+
+.result-line {
+  background-color: rgb(225, 225, 225);
+  margin: 10px 0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.result-line:hover {
+  background-color: rgb(164, 160, 160);
+}
+
+.result-line:hover::after {
+  content: "Click to copy !";
+  position: absolute;
+  right: 15px;
+}
+
+.symbol {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.title {
+  font-size: 20px;
+}
+
+/* FOOTER */
+
+footer {
+  height: 50px;
+  padding: 25px 0;
+}
+
+footer p {
+  font-size: 20px;
 }

@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import data from "./assets/emojiList.json";
+import Search from "./components/Search";
+import Line from "./components/Line";
+import Footer from "./components/Footer";
 
 function App() {
+  const [search, setSearch] = useState("");
+
+  // Les 20 premiers éléments
+  const data20 = data.slice(0, 20);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>😎 EmojiSearch 😎</h1>
+      <Search value={search} setValue={setSearch} />
+      <div className="results">
+        {search ? (
+          <div className="line">
+            {data.map((element) => {
+              if (element.keywords.includes(search)) {
+                return <Line value={element} />;
+              }
+            })}
+          </div>
+        ) : (
+          <div className="line">
+            {data20.map((element) => {
+              if (element.keywords.includes(search)) {
+                return <Line value={element} />;
+              }
+            })}
+          </div>
+        )}
+        <Footer />
+      </div>
     </div>
   );
 }

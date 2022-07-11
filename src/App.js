@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 function App() {
   const [search, setSearch] = useState("");
 
-  // Les 20 premiers éléments
+  // Les 20 premiers éléments de data
   const data20 = data.slice(0, 20);
 
   return (
@@ -28,11 +28,7 @@ function App() {
         ) : (
           <div className="line">
             {data20.map((element, index) => {
-              if (element.keywords.includes(search)) {
-                return <Line value={element} key={index} />;
-              } else {
-                return null;
-              }
+              return <Line value={element} key={index} />;
             })}
           </div>
         )}

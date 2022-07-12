@@ -4,10 +4,14 @@ const Search = ({ value, setValue }) => {
     setValue(value);
   };
 
+  const noRefresh = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <header>
       <h1>😎 EmojiSearch 😎</h1>
-      <form>
+      <form onSubmit={noRefresh}>
         <input
           type="text"
           placeholder="What emoji are you looking for ?"

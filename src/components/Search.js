@@ -1,6 +1,6 @@
 const Search = ({ value, setValue }) => {
   const handleChange = (element) => {
-    const value = element.target.value.toLowerCase();
+    const value = element.target.value;
     setValue(value);
   };
 

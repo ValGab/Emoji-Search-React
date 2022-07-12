@@ -18,7 +18,7 @@ function App() {
         {search ? (
           <div className="line">
             {data.map((element, index) => {
-              if (element.keywords.includes(search)) {
+              if (element.keywords.includes(search.toLowerCase())) {
                 return <Line value={element} key={index} />;
               } else {
                 return null;
